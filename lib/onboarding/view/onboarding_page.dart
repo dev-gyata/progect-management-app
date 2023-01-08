@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:progect_management_app/auth/create_account/view/create_account_page.dart';
 import 'package:progect_management_app/constants/constants.dart';
 import 'package:progect_management_app/l10n/l10n.dart';
 import 'package:progect_management_app/onboarding/cubit/slider_dot_cubit.dart';
@@ -90,8 +91,15 @@ class _OnboardingView extends StatelessWidget {
               _SliderDots(),
               SizedBox(
                 width: double.infinity,
-                child:
-                    TextButton(onPressed: () {}, child: Text(l10n.getStarted)),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const CreateAccountPage()));
+                  },
+                  child: Text(l10n.getStarted),
+                ),
               ),
               const SizedBox(
                 height: 20,

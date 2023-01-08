@@ -41,3 +41,4 @@ const kBlackColor = Color(0xFF07061E);
 const kWhiteColor = Color(0xFFFFFFFF);
 const hintTextColor = Color(0XFF858488);
 const kSliderDotColor = Color(0XFFC5C5C5);
+const kTextfieldBackgroundColor = Color(0XFFF3F3F3);
