@@ -114,12 +114,12 @@ class _SliderDots extends StatelessWidget {
           children: List.generate(3, (index) => index)
               .map((e) => Padding(
                     padding:
-                        const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                        const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                     child: state.index == e
                         ? AnimatedContainer(
                             duration: const Duration(milliseconds: 400),
                             height: 10,
-                            width: 40,
+                            width: 45,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: kBlackColor,

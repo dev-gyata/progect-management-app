@@ -6,5 +6,18 @@
     "scheduleText": "Schedule all your tasks in a straight-forward way",
     "scheduleTextDesc": "Scheduling tasks is super-easy, you also get a reminder so you won't miss out on completing you daily task",
     "workText": "Work with a team to achieve or complete a task",
-    "workTextDesc": "Easily work with a team or collaborate with others to work on a project together or complete tasks"
+    "workTextDesc": "Easily work with a team or collaborate with others to work on a project together or complete tasks",
+    "tellUsText": "Tell us about you",
+    "letsHelp": "Let's help you set up",
+    "firstName": "First name",
+    "firstNameExample": "e.g Clahsiq",
+    "lastName": "Last name",
+    "lastNameExample": "e.g Dare",
+    "email": "E-mail",
+    "emailNameExample": "e.g Dare@gmail.com",
+    "password": "Password",
+    "passwordExample": "e.g clahsiq$$$",
+    "createAccount": "Create account",
+    "alreadyHaveText": "Already have an account?",
+    "logIn": "Log in"
 }
