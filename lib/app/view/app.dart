@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:progect_management_app/counter/counter.dart';
 import 'package:progect_management_app/l10n/l10n.dart';
+import 'package:progect_management_app/onboarding/view/onboarding_page.dart';
+import 'package:progect_management_app/theme/theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -8,15 +9,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-        colorScheme: ColorScheme.fromSwatch(
-          accentColor: const Color(0xFF13B9FF),
-        ),
-      ),
+      theme: AppTheme.lightTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const OnboardingPage(),
     );
   }
 }

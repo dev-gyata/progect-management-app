@@ -1,7 +1,10 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
+    "getStarted": "Get Started",
+    "managingText": "Managing your projects is easy and more efficient now",
+    "managingTextDesc": "Enjoy organizing and managing all your projects and task with ease and efficiency",
+    "scheduleText": "Schedule all your tasks in a straight-forward way",
+    "scheduleTextDesc": "Scheduling tasks is super-easy, you also get a reminder so you won't miss out on completing you daily task",
+    "workText": "Work with a team to achieve or complete a task",
+    "workTextDesc": "Easily work with a team or collaborate with others to work on a project together or complete tasks"
 }
