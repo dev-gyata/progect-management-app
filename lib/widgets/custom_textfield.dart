@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:progect_management_app/theme/theme.dart';
+import 'package:progect_management_app/widgets/cubit/visibility_cubit.dart';
 
 class CustomTextfield extends StatelessWidget {
   const CustomTextfield(
@@ -15,37 +17,61 @@ class CustomTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: kTextfieldBackgroundColor,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 5),
-        child: Row(
-          children: [
-            Expanded(
-              child: TextField(
-                keyboardType: textInputType,
-                onChanged: onValueChanged,
-                decoration: InputDecoration.collapsed(
-                    hintText: hintText,
-                    hintStyle: Theme.of(context).textTheme.bodyText1?.copyWith(
-                        color: hintTextColor.withOpacity(.6), fontSize: 14)),
-              ),
-            ),
-            if (isPassword)
-              InkWell(
-                onTap: () {},
-                child: const Padding(
-                  padding: EdgeInsets.only(left: 8.0),
-                  child: Icon(
-                    Icons.visibility_outlined,
-                    color: Colors.black54,
+    return BlocProvider(
+      create: (context) => VisibilityCubit(),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: kTextfieldBackgroundColor,
+        ),
+        child: Padding(
+          padding:
+              const EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 5),
+          child: Row(
+            children: [
+              Builder(builder: (context) {
+                return Expanded(
+                  child: TextField(
+                    obscureText: isPassword
+                        ? context.watch<VisibilityCubit>().state.hide
+                        : false,
+                    keyboardType: textInputType,
+                    onChanged: onValueChanged,
+                    decoration: InputDecoration.collapsed(
+                      hintText: hintText,
+                      hintStyle:
+                          Theme.of(context).textTheme.bodyText1?.copyWith(
+                                color: hintTextColor.withOpacity(.6),
+                                fontSize: 14,
+                              ),
+                    ),
                   ),
-                ),
-              )
-          ],
+                );
+              }),
+              if (isPassword)
+                Builder(builder: (context) {
+                  return InkWell(
+                    onTap: () {
+                      context.read<VisibilityCubit>().onVisibilityChanged =
+                          !context.read<VisibilityCubit>().state.hide;
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: BlocBuilder<VisibilityCubit, VisibilityState>(
+                        builder: (context, state) {
+                          return Icon(
+                            state.hide
+                                ? Icons.visibility_off_outlined
+                                : Icons.visibility_outlined,
+                            color: Colors.black.withOpacity(.45),
+                          );
+                        },
+                      ),
+                    ),
+                  );
+                })
+            ],
+          ),
         ),
       ),
     );

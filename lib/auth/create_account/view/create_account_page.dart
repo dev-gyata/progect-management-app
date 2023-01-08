@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:progect_management_app/auth/create_account/cubit/create_account_cubit.dart';
 import 'package:progect_management_app/l10n/l10n.dart';
 import 'package:progect_management_app/theme/theme.dart';
 import 'package:progect_management_app/widgets/custom_textfield.dart';
@@ -8,7 +10,10 @@ class CreateAccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const _CreateAccountView();
+    return BlocProvider(
+      create: (context) => CreateAccountCubit(),
+      child: const _CreateAccountView(),
+    );
   }
 }
 
@@ -60,7 +65,10 @@ class _CreateAccountView extends StatelessWidget {
                 CustomTextfield(
                     hintText: l10n.firstNameExample,
                     textInputType: TextInputType.name,
-                    onValueChanged: (value) {}),
+                    onValueChanged: (value) {
+                      context.read<CreateAccountCubit>().onFirstNameChanged =
+                          value;
+                    }),
                 const SizedBox(
                   height: 20,
                 ),
@@ -77,7 +85,10 @@ class _CreateAccountView extends StatelessWidget {
                 CustomTextfield(
                     hintText: l10n.lastNameExample,
                     textInputType: TextInputType.name,
-                    onValueChanged: (value) {}),
+                    onValueChanged: (value) {
+                      context.read<CreateAccountCubit>().onLastNameChanged =
+                          value;
+                    }),
                 const SizedBox(
                   height: 20,
                 ),
@@ -93,8 +104,10 @@ class _CreateAccountView extends StatelessWidget {
                 ),
                 CustomTextfield(
                     hintText: l10n.emailNameExample,
-                    textInputType: TextInputType.name,
-                    onValueChanged: (value) {}),
+                    textInputType: TextInputType.emailAddress,
+                    onValueChanged: (value) {
+                      context.read<CreateAccountCubit>().onEmailChanged = value;
+                    }),
                 const SizedBox(
                   height: 20,
                 ),
@@ -110,8 +123,11 @@ class _CreateAccountView extends StatelessWidget {
                 ),
                 CustomTextfield(
                   hintText: l10n.passwordExample,
-                  textInputType: TextInputType.name,
-                  onValueChanged: (value) {},
+                  textInputType: TextInputType.visiblePassword,
+                  onValueChanged: (value) {
+                    context.read<CreateAccountCubit>().onPasswordChanged =
+                        value;
+                  },
                   isPassword: true,
                 ),
                 const SizedBox(
@@ -147,7 +163,7 @@ class _CreateAccountView extends StatelessWidget {
                       ),
                     )
                   ],
-                )
+                ),
               ],
             ),
           )),
