@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:progect_management_app/auth/create_account/cubit/create_account_cubit.dart';
+import 'package:progect_management_app/auth/login/view/login_page.dart';
 import 'package:progect_management_app/l10n/l10n.dart';
 import 'package:progect_management_app/theme/theme.dart';
 import 'package:progect_management_app/widgets/custom_textfield.dart';
@@ -23,16 +24,17 @@ class _CreateAccountView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    var height = MediaQuery.of(context).viewPadding.top;
+    final height = MediaQuery.of(context).viewPadding.top;
     final devSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: EdgeInsets.only(
-                left: devSize.width * .06,
-                right: devSize.width * .06,
-                top: height),
+              left: devSize.width * .06,
+              right: devSize.width * .06,
+              top: height,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -152,8 +154,16 @@ class _CreateAccountView extends StatelessWidget {
                             fontSize: 14,
                           ),
                     ),
+                    const SizedBox(
+                      width: 3,
+                    ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (_) => const LoginPage()),
+                        );
+                      },
                       child: Text(
                         l10n.logIn,
                         style: Theme.of(context)

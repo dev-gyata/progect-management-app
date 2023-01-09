@@ -21,7 +21,7 @@ class CustomTextfield extends StatelessWidget {
       create: (context) => VisibilityCubit(),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(15),
           color: kTextfieldBackgroundColor,
         ),
         child: Padding(
@@ -32,6 +32,7 @@ class CustomTextfield extends StatelessWidget {
               Builder(builder: (context) {
                 return Expanded(
                   child: TextField(
+                    // ignore: avoid_bool_literals_in_conditional_expressions
                     obscureText: isPassword
                         ? context.watch<VisibilityCubit>().state.hide
                         : false,

@@ -19,5 +19,10 @@
     "passwordExample": "e.g clahsiq$$$",
     "createAccount": "Create account",
     "alreadyHaveText": "Already have an account?",
-    "logIn": "Log in"
+    "logIn": "Log in",
+    "welcomeBack": "Welcome back",
+    "pleaseLoginText": "Please login to your account",
+    "forgotPassword": "I forgot my password",
+    "dontHaveAccount":"Don't have an account?",
+    "signUp": "Sign up"
 }
