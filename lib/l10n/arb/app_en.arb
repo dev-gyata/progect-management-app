@@ -24,5 +24,9 @@
     "pleaseLoginText": "Please login to your account",
     "forgotPassword": "I forgot my password",
     "dontHaveAccount":"Don't have an account?",
-    "signUp": "Sign up"
+    "signUp": "Sign up",
+    "home": "Home",
+    "schedule": "Schedule",
+    "task": "Task",
+    "settings":"Settings"
 }

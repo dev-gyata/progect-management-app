@@ -11,6 +11,9 @@ class AppTheme {
             ),
           ),
         ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            selectedItemColor: kSelectedBottomNavColor,
+            unselectedItemColor: kUnselectedBottomNavColor),
         textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -42,3 +45,5 @@ const kWhiteColor = Color(0xFFFFFFFF);
 const hintTextColor = Color(0XFF858488);
 const kSliderDotColor = Color(0XFFC5C5C5);
 const kTextfieldBackgroundColor = Color(0XFFF3F3F3);
+const kSelectedBottomNavColor = Color(0xFF05081E);
+const kUnselectedBottomNavColor = Color(0xFFd2d2d5);

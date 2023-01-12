@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:progect_management_app/auth/create_account/view/create_account_page.dart';
 import 'package:progect_management_app/auth/login/cubit/login_cubit.dart';
+import 'package:progect_management_app/home/view/home_page.dart';
 import 'package:progect_management_app/l10n/l10n.dart';
 import 'package:progect_management_app/theme/theme.dart';
 import 'package:progect_management_app/widgets/custom_textfield.dart';
@@ -115,7 +116,12 @@ class _LoginView extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const HomePage()),
+                    );
+                  },
                   child: Text(l10n.logIn),
                 ),
               ),
