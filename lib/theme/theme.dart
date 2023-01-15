@@ -11,7 +11,9 @@ class AppTheme {
             ),
           ),
         ),
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            // selectedLabelStyle: GoogleFonts.poppins(),
+            // unselectedLabelStyle: GoogleFonts.poppins(),
             selectedItemColor: kSelectedBottomNavColor,
             unselectedItemColor: kUnselectedBottomNavColor),
         textButtonTheme: TextButtonThemeData(

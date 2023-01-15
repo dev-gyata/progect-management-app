@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:progect_management_app/home/cubit/bottom_nav_cubit.dart';
+import 'package:progect_management_app/home/view/tabs/home_tab.dart';
 import 'package:progect_management_app/l10n/l10n.dart';
 import 'package:progect_management_app/theme/theme.dart';
 
@@ -24,10 +26,7 @@ class _HomeView extends StatelessWidget {
       body: IndexedStack(
           index: context.watch<BottomNavCubit>().state.index,
           children: [
-            AnimatedContainer(
-              duration: Duration(milliseconds: 300),
-              child: Center(child: const Text('Home')),
-            ),
+            const HomeTab(),
             AnimatedContainer(
               duration: Duration(milliseconds: 300),
               child: Center(child: const Text('Schedule')),
@@ -61,7 +60,7 @@ class _HomeView extends StatelessWidget {
                   label: l10n.home,
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.schedule),
+                  icon: Icon(FontAwesomeIcons.calendarDays),
                   label: l10n.schedule,
                 ),
                 BottomNavigationBarItem(

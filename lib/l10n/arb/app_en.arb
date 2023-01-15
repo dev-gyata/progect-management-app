@@ -28,5 +28,7 @@
     "home": "Home",
     "schedule": "Schedule",
     "task": "Task",
-    "settings":"Settings"
+    "settings":"Settings",
+    "searchForTask":"Search for your task and project",
+    "myProjects": "My projects"
 }

@@ -6,11 +6,13 @@ import 'package:progect_management_app/widgets/cubit/visibility_cubit.dart';
 class CustomTextfield extends StatelessWidget {
   const CustomTextfield(
       {super.key,
+      this.leading,
       required this.hintText,
       required this.textInputType,
       required this.onValueChanged,
       this.isPassword = false});
   final String hintText;
+  final Widget? leading;
   final TextInputType? textInputType;
   final void Function(String value) onValueChanged;
   final bool isPassword;
@@ -29,6 +31,7 @@ class CustomTextfield extends StatelessWidget {
               const EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 5),
           child: Row(
             children: [
+              if (leading != null) leading!,
               Builder(builder: (context) {
                 return Expanded(
                   child: TextField(
