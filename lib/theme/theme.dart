@@ -49,3 +49,4 @@ const kSliderDotColor = Color(0XFFC5C5C5);
 const kTextfieldBackgroundColor = Color(0XFFF3F3F3);
 const kSelectedBottomNavColor = Color(0xFF05081E);
 const kUnselectedBottomNavColor = Color(0xFFd2d2d5);
+const kLightBlue = Color(0xFFc6d7f3);

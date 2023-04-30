@@ -3,6 +3,8 @@ import 'package:progect_management_app/l10n/l10n.dart';
 import 'package:progect_management_app/theme/theme.dart';
 import 'package:progect_management_app/widgets/custom_textfield.dart';
 
+import 'my_projects_section.dart';
+
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
 
@@ -11,6 +13,8 @@ class HomeTab extends StatelessWidget {
     final l10n = context.l10n;
     final top = MediaQuery.of(context).viewPadding.top;
     final devSize = MediaQuery.of(context).size;
+    const user =
+        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80';
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       child: SingleChildScrollView(
@@ -24,7 +28,9 @@ class HomeTab extends StatelessWidget {
           children: [
             Row(
               children: [
-                const CircleAvatar(),
+                const CircleAvatar(
+                  foregroundImage: NetworkImage(user),
+                ),
                 const SizedBox(
                   width: 10,
                 ),
@@ -82,7 +88,8 @@ class HomeTab extends StatelessWidget {
             Text(
               l10n.myProjects,
               style: Theme.of(context).textTheme.bodyText1,
-            )
+            ),
+            const MyProjectsSectionWidget()
           ],
         ),
       )),
