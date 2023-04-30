@@ -30,5 +30,6 @@
     "task": "Task",
     "settings":"Settings",
     "searchForTask":"Search for your task and project",
-    "myProjects": "My projects"
+    "myProjects": "My projects",
+    "todaysTask": "Today's task"
 }
