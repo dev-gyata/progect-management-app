@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:progect_management_app/create_new_project/create_new_project.dart';
 import 'package:progect_management_app/home/cubit/bottom_nav_cubit.dart';
 import 'package:progect_management_app/home/view/tabs/home_tab.dart';
 import 'package:progect_management_app/l10n/l10n.dart';
 import 'package:progect_management_app/theme/theme.dart';
+import 'package:progect_management_app/utils/navigation_utils.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -46,6 +48,7 @@ class _HomeView extends StatelessWidget {
           return BottomNavigationBar(
               onTap: (index) {
                 if (index == 2) {
+                  context.navigate(page: const CreateNewProjectPage());
                   return;
                 }
                 context.read<BottomNavCubit>().onIndexChanged = index;

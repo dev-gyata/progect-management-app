@@ -10,12 +10,14 @@ class CustomTextfield extends StatelessWidget {
       required this.hintText,
       required this.textInputType,
       required this.onValueChanged,
-      this.isPassword = false});
+      this.isPassword = false,
+      this.maxLines});
   final String hintText;
   final Widget? leading;
   final TextInputType? textInputType;
   final void Function(String value) onValueChanged;
   final bool isPassword;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class CustomTextfield extends StatelessWidget {
       create: (context) => VisibilityCubit(),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(8),
           color: kTextfieldBackgroundColor,
         ),
         child: Padding(
@@ -33,24 +35,41 @@ class CustomTextfield extends StatelessWidget {
             children: [
               if (leading != null) leading!,
               Builder(builder: (context) {
-                return Expanded(
-                  child: TextField(
-                    // ignore: avoid_bool_literals_in_conditional_expressions
-                    obscureText: isPassword
-                        ? context.watch<VisibilityCubit>().state.hide
-                        : false,
-                    keyboardType: textInputType,
-                    onChanged: onValueChanged,
-                    decoration: InputDecoration.collapsed(
-                      hintText: hintText,
-                      hintStyle:
-                          Theme.of(context).textTheme.bodyText1?.copyWith(
-                                color: hintTextColor.withOpacity(.6),
-                                fontSize: 14,
-                              ),
-                    ),
-                  ),
-                );
+                return maxLines != null
+                    ? Expanded(
+                        child: TextField(
+                          // ignore: avoid_bool_literals_in_conditional_expressions
+                          maxLines: maxLines,
+                          keyboardType: textInputType,
+                          onChanged: onValueChanged,
+                          decoration: InputDecoration.collapsed(
+                            hintText: hintText,
+                            hintStyle:
+                                Theme.of(context).textTheme.bodyText1?.copyWith(
+                                      color: hintTextColor,
+                                      fontSize: 14,
+                                    ),
+                          ),
+                        ),
+                      )
+                    : Expanded(
+                        child: TextField(
+                          // ignore: avoid_bool_literals_in_conditional_expressions
+                          obscureText: isPassword
+                              ? context.watch<VisibilityCubit>().state.hide
+                              : false,
+                          keyboardType: textInputType,
+                          onChanged: onValueChanged,
+                          decoration: InputDecoration.collapsed(
+                            hintText: hintText,
+                            hintStyle:
+                                Theme.of(context).textTheme.bodyText1?.copyWith(
+                                      color: hintTextColor,
+                                      fontSize: 14,
+                                    ),
+                          ),
+                        ),
+                      );
               }),
               if (isPassword)
                 Builder(builder: (context) {

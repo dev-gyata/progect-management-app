@@ -11,7 +11,12 @@ class AppTheme {
             ),
           ),
         ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        appBarTheme: AppBarTheme(
+            centerTitle: true,
+            iconTheme: const IconThemeData(size: 15, color: kBlackColor),
+            titleTextStyle: GoogleFonts.poppins(
+                fontSize: 18, fontWeight: FontWeight.w500, color: kBlackColor)),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
             // selectedLabelStyle: GoogleFonts.poppins(),
             // unselectedLabelStyle: GoogleFonts.poppins(),
             selectedItemColor: kSelectedBottomNavColor,

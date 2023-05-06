@@ -31,5 +31,18 @@
     "settings":"Settings",
     "searchForTask":"Search for your task and project",
     "myProjects": "My projects",
-    "todaysTask": "Today's task"
+    "todaysTask": "Today's task",
+    "createANewProject": "Create a new Project",
+    "createProject": "Create Project",
+    "projectTitle":"Project Title",
+    "addTheProjectTitle":"Add the project title",
+    "description":"Description",
+    "addDescription": "Add Description",
+    "category": "Category",
+    "team": "Team",
+    "personal": "Personal",
+    "addTeamMembers":"Add team members",
+    "date": "Date",
+    "time":"Time",
+    "addFile": "Add File"  
 }
