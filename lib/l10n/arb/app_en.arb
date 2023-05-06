@@ -44,5 +44,8 @@
     "addTeamMembers":"Add team members",
     "date": "Date",
     "time":"Time",
-    "addFile": "Add File"  
+    "addFile": "Add File",
+    "projectDetails": "Project Details",
+    "progress": "Progress",
+    "addTask": "Add task"
 }

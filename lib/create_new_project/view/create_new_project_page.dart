@@ -2,8 +2,9 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:progect_management_app/l10n/l10n.dart';
 import 'package:progect_management_app/theme/theme.dart';
-import 'package:progect_management_app/utils/navigation_utils.dart';
+import 'package:progect_management_app/widgets/custom_app_bar.dart';
 import 'package:progect_management_app/widgets/custom_textfield.dart';
+import 'package:progect_management_app/widgets/label.dart';
 
 class CreateNewProjectPage extends StatelessWidget {
   const CreateNewProjectPage({super.key});
@@ -11,37 +12,13 @@ class CreateNewProjectPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    // ignore: prefer_const_declarations
     final user =
         'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80';
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        leading: Container(
-          margin: const EdgeInsets.only(
-            left: 20,
-            top: 10,
-            bottom: 10,
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-              color: hintTextColor.withOpacity(.2),
-              width: 1,
-            ),
-          ),
-          child: InkWell(
-            onTap: context.goBack,
-            child: const Padding(
-              padding: EdgeInsets.all(5),
-              child: Icon(Icons.arrow_back_ios_new),
-            ),
-          ),
-        ),
-        title: Text(
-          l10n.createANewProject,
-        ),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
+      appBar: CustomAppBar(
+        title: l10n.createANewProject,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -278,8 +255,3 @@ class CreateNewProjectPage extends StatelessWidget {
     );
   }
 }
-
-Widget label({required BuildContext context, required String text}) => Text(
-      text,
-      style: Theme.of(context).textTheme.bodyText1,
-    );
