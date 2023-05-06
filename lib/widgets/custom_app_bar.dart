@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: Container(
-        margin: const EdgeInsets.only(left: 20, top: 15, bottom: 15, right: 10),
+        margin: const EdgeInsets.only(left: 20, top: 15, bottom: 15, right: 5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
