@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "692295690546",
+    "project_id": "project-management-app-ea299",
+    "storage_bucket": "project-management-app-ea299.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692295690546:android:835fddca1615f629c68f2b",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.progect_management_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692295690546-gaiicncu5bq8hk06jhe0r771ihhsekg2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTJS1BrdwqZt3Ehrf1HZtWBk5NqMFqhJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692295690546-gaiicncu5bq8hk06jhe0r771ihhsekg2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "692295690546-mm33ar4qmdtqnovm7r3ho51dl5cdt7n5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.verygoodcore.progect-management-app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

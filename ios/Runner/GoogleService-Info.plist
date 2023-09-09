@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>692295690546-mm33ar4qmdtqnovm7r3ho51dl5cdt7n5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.692295690546-mm33ar4qmdtqnovm7r3ho51dl5cdt7n5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDf5VmzD_Jz94Q1N3u91xMYtvopeNzwEt8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>692295690546</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.verygoodcore.progect-management-app</string>
+	<key>PROJECT_ID</key>
+	<string>project-management-app-ea299</string>
+	<key>STORAGE_BUCKET</key>
+	<string>project-management-app-ea299.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:692295690546:ios:bba06ade1a22752ac68f2b</string>
+</dict>
+</plist>
