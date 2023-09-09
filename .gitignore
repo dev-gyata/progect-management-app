@@ -126,4 +126,4 @@ app.*.map.json
 !.idea/dictionaries/
 !.idea/runConfigurations/
 
-./lib/firebase_options.dart
+./lib/firebase_options.dart./lib/firebase_options.dart
