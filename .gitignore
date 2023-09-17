@@ -128,3 +128,6 @@ app.*.map.json
 
 
 lib/firebase_options.dart
+lib/firebase_options_dev.dart
+lib/firebase_options_stg.dart
+lib/firebase_options_prod.dart

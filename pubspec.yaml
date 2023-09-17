@@ -4,7 +4,7 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
   flutter: 3.3.8
 
 dependencies:
@@ -23,6 +23,9 @@ dependencies:
   dotted_border: ^2.0.0+3
   firebase_core: ^2.15.1
   firebase_auth: ^4.9.0
+  formz: ^0.6.0
+  authentication_repository:
+    path: ./packages/authentication_repository/
 
 dev_dependencies:
   # auto_route_generator: ^5.0.3

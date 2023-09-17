@@ -2,9 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
-import 'package:progect_management_app/firebase_options.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
@@ -26,8 +24,6 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   };
 
   Bloc.observer = AppBlocObserver();
-
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   await runZonedGuarded(
     () async => runApp(await builder()),
