@@ -24,4 +24,12 @@ class AuthenticationRepository {
     }
     return (null, null);
   }
+
+  Future<ApiResponse<void>> logout() async {
+    final response = await _service.logout();
+    if (response is String) {
+      return (null, response);
+    }
+    return (null, null);
+  }
 }

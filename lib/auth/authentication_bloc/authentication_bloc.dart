@@ -17,7 +17,7 @@ class AuthenticationBloc
     on<AuthenticationStatusChanged>(_onAuthenticationStatusChanged);
     on<AuthenticationLogoutRequested>(_onAuthenticationLogoutRequested);
 
-    _subscription = FirebaseAuth.instance.authStateChanges().listen((event) {
+    _subscription = _authenticationRepository.getUser.listen((event) {
       add(AuthenticationStatusChanged(event));
     });
   }

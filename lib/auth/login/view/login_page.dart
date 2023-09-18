@@ -106,12 +106,19 @@ class _LoginView extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  CustomTextfield(
-                    hintText: l10n.passwordExample,
-                    textInputType: TextInputType.visiblePassword,
-                    isPassword: true,
-                    onValueChanged: (value) {
-                      context.read<LoginCubit>().onPasswordChanged(value);
+                  Builder(
+                    builder: (context) {
+                      final hasError = context.select<LoginCubit, bool>(
+                          (cubit) => cubit.state.password.displayError != null);
+                      return CustomTextfield(
+                        errorMessage: hasError ? 'Invalid password' : null,
+                        hintText: l10n.passwordExample,
+                        textInputType: TextInputType.visiblePassword,
+                        isPassword: true,
+                        onValueChanged: (value) {
+                          context.read<LoginCubit>().onPasswordChanged(value);
+                        },
+                      );
                     },
                   ),
                   const SizedBox(
